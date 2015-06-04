@@ -20,6 +20,5 @@ RSpec.describe Post, type: :model do
       end
     expect(post.comments.length).to eq 5
     end
-
   end
 end
