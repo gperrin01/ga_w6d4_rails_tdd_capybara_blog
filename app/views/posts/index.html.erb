@@ -4,6 +4,6 @@
 <h3>All my posts so far</h3>
 <ul>
 <% @posts.each do |post| %>
-  <li> <%= link_to post.title, posts_path(post) %> </li>
+  <li> <%= link_to post.title, post_path(post) %> </li>
 <% end %>
 </ul>
