@@ -3,10 +3,10 @@ require 'rails_helper'
 describe 'commenting' do
 
   before do
-    Post.create(title 'a title', text: 'long text')
+    Post.create(title:'a title', text: 'long text')
   end
 
-  it 'can add a comment to an article' do
+  it 'can add a comment to a post' do
     visit articles_path
     click_link 'a title'
     click_link 'Add comment'
