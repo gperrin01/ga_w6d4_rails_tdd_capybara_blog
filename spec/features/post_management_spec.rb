@@ -20,4 +20,16 @@ describe 'handling articles' do
       expect(page).to have_content 'some text'
     end
 
+    it 'can edit an article' do
+      post.save
+      visit post_path(post)
+      click_link 'Edit post'
+      fill_in 'Title', with: 'a new title'
+      fill_in 'Text', with: 'a new text'
+      click_button 'Submit'
+
+      expect(page).to have_content 'a new title'
+      expect(page).to have_content 'a new text'
+    end
+
 end

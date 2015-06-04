@@ -21,8 +21,17 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
-  def delete
+  def update
+    @post = Post.new params[:post].permit(:title, :text)
+    if @post.save
+      redirect_to post_path(@post)
+    else render 'edit'
+    end
+  end
+
+  def destroy
   end
 end
