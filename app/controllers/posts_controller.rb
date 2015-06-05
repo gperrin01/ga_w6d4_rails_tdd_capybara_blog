@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @post = Post.new params[:post].permit(:title, :text)
     if @post.save
       redirect_to post_path(@post)
-    else render 'edit'
+    else render 'show'
     end
   end
 
